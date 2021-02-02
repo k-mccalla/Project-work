@@ -1,0 +1,17 @@
+20210202 15:02:02 INFO  [main] ims.IMS IMS.java43 - Welcome to the Inventory Management System!
+20210202 15:02:02 INFO  [main] ims.IMS IMS.java48 - Which entity would you like to use?
+20210202 15:02:02 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
+20210202 15:02:02 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
+20210202 15:02:02 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
+20210202 15:02:02 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
+20210202 15:02:07 INFO  [main] ims.IMS IMS.java78 - What would you like to do with order:
+20210202 15:02:07 INFO  [main] controller.Action Action.java39 - CREATE: To save a new entity into the database
+20210202 15:02:07 INFO  [main] controller.Action Action.java39 - READ: To read an entity from the database
+20210202 15:02:07 INFO  [main] controller.Action Action.java39 - UPDATE: To change an entity already in the database
+20210202 15:02:07 INFO  [main] controller.Action Action.java39 - DELETE: To remove an entity from the database
+20210202 15:02:07 INFO  [main] controller.Action Action.java39 - RETURN: To return to domain selection
+20210202 15:02:12 INFO  [main] ims.IMS IMS.java48 - Which entity would you like to use?
+20210202 15:02:12 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
+20210202 15:02:12 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
+20210202 15:02:12 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
+20210202 15:02:12 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
