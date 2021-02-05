@@ -42,10 +42,9 @@ public class OrderDAO implements Dao<Order> {
 		Long fkOrderID = resultSet.getLong("fk_order_id");
 		Long fkItemID = resultSet.getLong("fk_item_id");
 
-        return new Orders_Items(saleID, fkOrderID, fkItemID);
+		return new Orders_Items(saleID, fkOrderID, fkItemID);
 
 	}
-	
 
 	@Override
 	public List<Order> readAll() {
@@ -80,9 +79,9 @@ public class OrderDAO implements Dao<Order> {
 
 		return null;
 	}
-
+	
 	@Override
-	public Order create(Order order) {
+	public Order create (Order order) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
 						.prepareStatement("INSERT INTO orders(price, quantity, date, fk_id) VALUES (?, ?, ?, ?)");) {
@@ -90,29 +89,30 @@ public class OrderDAO implements Dao<Order> {
 			statement.setLong(2, order.getQuantity());
 			statement.setString(3, order.getDate());
 			statement.setLong(4, order.getFkID());
-
+			
 			statement.executeUpdate();
-
-			try (Connection connection1 = DBUtils.getInstance().getConnection();
-					PreparedStatement statement1 = connection1.prepareStatement(
-							"INSERT INTO order_items(sales_id, order_id item_id) VALUES (?, ?, ?)");) {
-				statement.setLong(1, Orders_Items.getSaleID());
-				statement.setLong(2, Orders_Items.getFkOrderID());
-				statement.setLong(3, Orders_Items.getFkItemID());
+			return readLatest();
+			
+	try (	PreparedStatement statement1 = connection.prepareStatement("INSERT INTO order_items(sales_id, order_id, item_id) VALUES (?, ?, ?)");) {
+				statement.setLong(5, order.getSaleID()); 
+				statement.setLong(6, order.getFkOrderID());
+				statement.setLong(7, order.getFkItemID());
 				statement.executeUpdate();
 				return readLatest();
-			} catch (Exception e) {
-				LOGGER.debug(e);
-				LOGGER.error(e.getMessage());
+							}
 			}
-			return null;
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
 		}
-		return order;
-
-	}
+		
+}
+		//catch(Exception e)
+//	{
+//								LOGGER.debug(e);
+//								LOGGER.error(e.getMessage());
+//							return null;
+//							
+//						
+//		
+//		}
 
 	public Order readLatest() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
