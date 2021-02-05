@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,10 +59,10 @@ public class OrderDAO implements Dao<Order> {
 
 
 	@Override
-	public Order read(Order order) {
+	public Order read(Long orderID) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection.prepareStatement("SELECT * FROM orders WHERE order_id = ?");) {
-			statement.setDouble(1, orderID);
+			statement.setLong(1, orderID);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
 				return modelFromResultSet1(resultSet);
@@ -116,7 +117,6 @@ public Order readLatest() {
 			statement.setLong(1, t.getPrice());	
 			statement.setLong(2, t.getQuantity());
 			statement.setString(3, t.getDate());          
-		
 			statement.setLong(4, t.getFkID());
 			statement.setLong(5, t.getFkItemID());
 			statement.executeUpdate();
@@ -151,11 +151,5 @@ public Order readLatest() {
 		return null;
 	}
 
-	@Override
-	public Order read(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
-
 	
