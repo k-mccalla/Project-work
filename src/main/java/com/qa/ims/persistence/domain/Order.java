@@ -7,7 +7,18 @@ public class Order {
 	private Long quantity;
 	private String date;
 	private Long fkID;
-	//private Long fkItemID;
+	private Long saleID;
+	//private Long OrderID;
+	private Long ItemID;
+
+	
+	
+	public Order(Long orderID, Long ItemID) {
+	super();
+	this.orderID = orderID;
+	this.ItemID = ItemID;
+}
+
 
 	public Order(Long orderID, Long price, Long quantity, String date, Long fkID) {
 		super();
@@ -16,7 +27,7 @@ public class Order {
 		this.quantity = quantity;
 		this.date = date;
 		this.fkID = fkID;
-		//this.fkItemID = fkItemID;
+	
 
 	}
 
@@ -26,7 +37,7 @@ public class Order {
 		this.quantity = quantity;
 		this.date = date;
 		this.fkID = fkID;
-		//this.fkItemID = fkItemID;
+		
 	}
 
 	public Order(Long price, Long quantity, String date) {
@@ -45,6 +56,18 @@ public Order(Long orderID, String date, Long price, Long quantity) {
 		
 	}
 
+
+
+
+
+
+public Order(Long saleID, Long orderID, Long ItemID) {
+	super();
+	this.saleID = saleID;
+	this.orderID = orderID;
+	this.ItemID = ItemID;
+}
+
 //	public Order(Long orderID, Long price, Long quantity, String date) {
 //		super();
 //		this.orderID = orderID;
@@ -56,17 +79,33 @@ public Order(Long orderID, String date, Long price, Long quantity) {
 	
 //	public Order(long orderID2, long price2, long quantity2, long date2) {
 //	
-//	}//unsure
+//	}
 	//getters setter, to string and hash.
 	
 	
-	public Long getOrderID() {
-		return orderID;
-	}
+	public Long getSaleID() {
+	return saleID;
+}
 
-	public void setOrderID(Long orderID) {
-		this.orderID = orderID;
-	}
+public void setSaleID(Long saleID) {
+	this.saleID = saleID;
+}
+
+public Long getOrderID() {
+	return orderID;
+}
+
+public void setOrderID(Long OrderID) {
+	this.orderID = OrderID;
+}
+
+public Long getItemID() {
+	return ItemID;
+}
+
+public void setItemID(Long ItemID) {
+	this.ItemID = ItemID;
+}
 
 	public Long getPrice() {
 		return price;
@@ -115,19 +154,24 @@ public Order(Long orderID, String date, Long price, Long quantity) {
 	@Override
 	public String toString() {
 		return "Order [orderID=" + orderID + ", price=" + price + ", quantity=" + quantity + ", date=" + date
-				+ ", fkID=" + fkID + ", ]";
+				+ ", fkID=" + fkID + ", saleID=" + saleID + ", OrderID=" + orderID + ", ItemID=" + ItemID + "]";
 	}
 
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		result = prime * result + ((fkID == null) ? 0 : fkID.hashCode());
-		//result = prime * result + ((fkItemID == null) ? 0 : fkItemID.hashCode());
+		result = prime * result + ((ItemID == null) ? 0 : ItemID.hashCode());
+		result = prime * result + ((orderID == null) ? 0 : orderID.hashCode());
 		result = prime * result + ((orderID == null) ? 0 : orderID.hashCode());
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
+		result = prime * result + ((saleID == null) ? 0 : saleID.hashCode());
 		return result;
 	}
 
@@ -150,16 +194,21 @@ public Order(Long orderID, String date, Long price, Long quantity) {
 				return false;
 		} else if (!fkID.equals(other.fkID))
 			return false;
-//		if (fkItemID == null) {
-//			if (other.fkItemID != null)
-//				return false;
-//		} else if (!fkItemID.equals(other.fkItemID))
-//			return false;
-//		if (orderID == null) {
-//			if (other.orderID != null)
-//				return false;
-//		} else if (!orderID.equals(other.orderID))
-//			return false;
+		if (ItemID == null) {
+			if (other.ItemID != null)
+				return false;
+		} else if (!ItemID.equals(other.ItemID))
+			return false;
+		if (orderID == null) {
+			if (other.orderID != null)
+				return false;
+		} else if (!orderID.equals(other.orderID))
+			return false;
+		if (orderID == null) {
+			if (other.orderID != null)
+				return false;
+		} else if (!orderID.equals(other.orderID))
+			return false;
 		if (price == null) {
 			if (other.price != null)
 				return false;
@@ -170,12 +219,17 @@ public Order(Long orderID, String date, Long price, Long quantity) {
 				return false;
 		} else if (!quantity.equals(other.quantity))
 			return false;
+		if (saleID == null) {
+			if (other.saleID != null)
+				return false;
+		} else if (!saleID.equals(other.saleID))
+			return false;
 		return true;
 	}
-
+}
 //	public long getFkItemID() {
 //		// TODO Auto-generated method stub
 //		return ;
 //	}
-
-}
+//
+//}
