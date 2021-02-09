@@ -1,7 +1,7 @@
 Coverage: 34%
 # Project Title: Inventory Management System
 
-One Paragraph of project description goes here
+This project is a 
 
 ## Getting Started
 
