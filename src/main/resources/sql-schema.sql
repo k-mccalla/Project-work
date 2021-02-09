@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 `order_id` int(11) NOT NULL AUTO_INCREMENT,
 `price` double,
 PRIMARY KEY (`order_id`),
-FOREIGN KEY (`id`) REFERENCES customers(id)
+FOREIGN KEY (`id`) REFERENCES customers(id) on delete cascade
 
 
 );
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `order_items`(
 `order_id` int(11) NOT NULL,
 `item_id` int(11) NOT NULL,
 PRIMARY KEY (`sale_id`),
-FOREIGN KEY (`order_id`) REFERENCES orders(order_id),
-FOREIGN KEY (`item_id`) REFERENCES items(item_id) 
+FOREIGN KEY (`order_id`) REFERENCES orders(order_id) on delete cascade,
+FOREIGN KEY (`item_id`) REFERENCES items(item_id) on delete cascade
 
 );

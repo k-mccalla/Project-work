@@ -53,7 +53,7 @@ public class ItemController implements CrudController<Item> {
 	@Override
 	public Item update() {
 		LOGGER.info("Please enter the id of the item you wish to update");
-		long itemID = utils.getLong();
+		Long itemID = utils.getLong();
 		LOGGER.info("Please enter the name of the item you wish to update");
 		String itemName = utils.getString();
 		LOGGER.info("Please enter the price of the item you wish to update");
@@ -66,7 +66,7 @@ public class ItemController implements CrudController<Item> {
 	@Override
 	public int delete() {
 		LOGGER.info("Please enter the id of the item you wish to delete");
-		long itemID = utils.getLong();
+		Long itemID = utils.getLong();
 		LOGGER.info("Item successfully deleted");
 		return itemDAO.delete(itemID);
 	}
