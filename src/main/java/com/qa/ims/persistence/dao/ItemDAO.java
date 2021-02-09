@@ -16,6 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 
 import com.qa.ims.persistence.domain.Item;
+import com.qa.ims.persistence.domain.Order;
 import com.qa.ims.utils.DBUtils;
 
 public class ItemDAO implements Dao<Item> {
@@ -137,6 +138,14 @@ public class ItemDAO implements Dao<Item> {
 
 	@Override
 	public Item read(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	@Override
+	public Item addItem(Item t) {
 		// TODO Auto-generated method stub
 		return null;
 	}
