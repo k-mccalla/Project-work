@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 
 import com.qa.ims.persistence.domain.Item;
-import com.qa.ims.persistence.domain.Order;
+
 import com.qa.ims.utils.DBUtils;
 
 public class ItemDAO implements Dao<Item> {
@@ -26,9 +27,8 @@ public class ItemDAO implements Dao<Item> {
 	public Item modelFromResultSet1(ResultSet resultSet) throws SQLException {
 		String itemName = resultSet.getString("item_name"); //
 		Long itemID = resultSet.getLong("item_id");
-		Long price = resultSet.getLong("price");
-		Long quantity = resultSet.getLong("quantity");
-		return new Item(itemID, price, itemName, quantity);
+		Double price = resultSet.getDouble("price");
+		return new Item(itemID, price, itemName);
 	}
 
 	@Override
@@ -68,11 +68,10 @@ public class ItemDAO implements Dao<Item> {
 	public Item create(Item item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection.prepareStatement(
-						"INSERT INTO items(item_name, price, quantity) VALUES (?, ?, ?)");) {
+						"INSERT INTO items(item_name, price) VALUES (?, ?)");) {
 			statement.setString(1, item.getItemName());
 			
-			statement.setLong(2, item.getPrice());
-			statement.setLong(3, item.getQuantity());
+			statement.setDouble(2, item.getPrice());
 			statement.executeUpdate();
 			return readLatest();
 		} catch (Exception e) {
@@ -115,11 +114,10 @@ public class ItemDAO implements Dao<Item> {
 	public Item update(Item t) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE items SET item_name = ?, price = ?, quantity = ? WHERE id = ?");) {
+						.prepareStatement("UPDATE items SET item_name = ?, price = ? WHERE id = ?");) {
 			statement.setString(1, t.getItemName());
-			statement.setLong(2, t.getPrice());
-			statement.setLong(3, t.getQuantity());
-			statement.setLong(4, t.getItemID());
+			statement.setDouble(2, t.getPrice());
+			statement.setLong(3, t.getItemID());
 			statement.executeUpdate();
 			return read(t.getItemID());
 		} catch (Exception e) {
@@ -143,12 +141,6 @@ public class ItemDAO implements Dao<Item> {
 	}
 
 	
-
-	@Override
-	public Item addItem(Item t) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 

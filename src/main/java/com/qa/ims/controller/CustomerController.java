@@ -33,6 +33,7 @@ public class CustomerController implements CrudController<Customer> {
 	 */
 	@Override
 	public List<Customer> readAll() {
+		
 		List<Customer> customers = customerDAO.readAll();
 		for (Customer customer : customers) {
 			LOGGER.info(customer);
@@ -82,4 +83,5 @@ public class CustomerController implements CrudController<Customer> {
 		return customerDAO.delete(id);
 	}
 
+	
 }

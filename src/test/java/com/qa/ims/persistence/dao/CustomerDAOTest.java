@@ -2,9 +2,12 @@ package com.qa.ims.persistence.dao;
 
 import static org.junit.Assert.assertEquals;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -56,4 +59,16 @@ public class CustomerDAOTest {
 	public void testDelete() {
 		assertEquals(1, DAO.delete(1));
 	}
+
+	@After
+	public void finalise() {
+		System.out.println("After test");
+	}
 }
+//	@AfterClass
+//	public static void teardown() {
+//		System.out.println("After class");
+//
+//	}
+//
+//}

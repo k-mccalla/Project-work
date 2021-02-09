@@ -1,177 +1,129 @@
 package com.qa.ims.persistence.domain;
 
+import java.util.List;
+
 public class Order {
 
 	private Long orderID;
-	private Long price;
-	private Long quantity;
-	private String date;
-	private Long fkID;
-	private Long saleID;
-	//private Long OrderID;
-	private Long ItemID;
+	private Double price;
+	private Long customerID;
+	private List<Item> item;
 
 	
+
 	
-	public Order(Long orderID, Long ItemID) {
-	super();
-	this.orderID = orderID;
-	this.ItemID = ItemID;
-}
 
-
-	public Order(Long orderID, Long price, Long quantity, String date, Long fkID) {
+	public Order(Long orderID, Double price, Long customerID, List<Item> item) {
 		super();
 		this.orderID = orderID;
 		this.price = price;
-		this.quantity = quantity;
-		this.date = date;
-		this.fkID = fkID;
+		this.customerID = customerID;
+		this.item = item;
+	}
+
+
+
+
+	public Order(Double price, Long customerID) {
+		super();
+		this.price = price;
+		this.customerID = customerID;
+	}
+
+
+
+
+	public Order(Long customerID) {
+		super();
+		this.customerID = customerID;
+	}
+
+
+
+
+
 	
-
-	}
-
-	public Order(Long price, Long quantity, Long fkID, String date) {
-		super();
-		this.price = price;
-		this.quantity = quantity;
-		this.date = date;
-		this.fkID = fkID;
-		
-	}
-
-	public Order(Long price, Long quantity, String date) {
-		super();
-		this.price = price;
-		this.quantity = quantity;
-		this.date = date;
-	}
-
-public Order(Long orderID, String date, Long price, Long quantity) {
-		super();
-		this.orderID = orderID;
-		this.date = date;
-		this.price = price;
-		this.quantity = quantity;
-		
-	}
-
-
-
-
-
-
-public Order(Long saleID, Long orderID, Long ItemID) {
-	super();
-	this.saleID = saleID;
-	this.orderID = orderID;
-	this.ItemID = ItemID;
-}
-
-//	public Order(Long orderID, Long price, Long quantity, String date) {
+	
+//	
+//	public Order(Long orderID) {
 //		super();
 //		this.orderID = orderID;
-//		this.price = price;
-//		this.quantity = quantity;
-//		this.date = date;
 //	}
-//	
-	
-//	public Order(long orderID2, long price2, long quantity2, long date2) {
-//	
-//	}
-	//getters setter, to string and hash.
-	
-	
-	public Long getSaleID() {
-	return saleID;
-}
 
-public void setSaleID(Long saleID) {
-	this.saleID = saleID;
-}
 
-public Long getOrderID() {
-	return orderID;
-}
 
-public void setOrderID(Long OrderID) {
-	this.orderID = OrderID;
-}
 
-public Long getItemID() {
-	return ItemID;
-}
+	public Long getOrderID() {
+		return orderID;
+	}
 
-public void setItemID(Long ItemID) {
-	this.ItemID = ItemID;
-}
 
-	public Long getPrice() {
+
+
+	public void setOrderID(Long orderID) {
+		this.orderID = orderID;
+	}
+
+
+
+
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Long price) {
+
+
+
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
-	public Long getQuantity() {
-		return quantity;
+
+
+
+	public Long getCustomerID() {
+		return customerID;
 	}
 
-	public void setQuantity(Long quantity) {
-		this.quantity = quantity;
+
+
+
+	public void setCustomerID(Long customerID) {
+		this.customerID = customerID;
 	}
 
-	public String getDate() {
-		
-		return date;
+
+
+
+	public List<Item> getItem() {
+		return item;
 	}
 
-	public void setDate(String date) { 
-		this.date = date;
+
+
+
+	public void setItem(List<Item> item) {
+		this.item = item;
 	}
 
-	public Long getFkID() {
-		return fkID;
-	}
 
-	public void setFkID(Long fkID) {
-		this.fkID = fkID;
-	}
 
-//	public Long getFkItemID() {
-//		return fkItemID;
-//	}
-//
-//	public void setFkItemID(Long fkItemID) {
-//		this.fkItemID = fkItemID;
-//			
-//	}
-//	
-	
 
 	@Override
 	public String toString() {
-		return "Order [orderID=" + orderID + ", price=" + price + ", quantity=" + quantity + ", date=" + date
-				+ ", fkID=" + fkID + ", saleID=" + saleID + ", OrderID=" + orderID + ", ItemID=" + ItemID + "]";
+		return "Order [orderID=" + orderID + ", price=" + price + ", customerID=" + customerID + ", item=" + item + "]";
 	}
 
-	
-	
-	
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + ((fkID == null) ? 0 : fkID.hashCode());
-		result = prime * result + ((ItemID == null) ? 0 : ItemID.hashCode());
 		result = prime * result + ((orderID == null) ? 0 : orderID.hashCode());
 		result = prime * result + ((orderID == null) ? 0 : orderID.hashCode());
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
-		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
-		result = prime * result + ((saleID == null) ? 0 : saleID.hashCode());
 		return result;
 	}
 
@@ -184,21 +136,6 @@ public void setItemID(Long ItemID) {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		if (date == null) {
-			if (other.date != null)
-				return false;
-		} else if (!date.equals(other.date))
-			return false;
-		if (fkID == null) {
-			if (other.fkID != null)
-				return false;
-		} else if (!fkID.equals(other.fkID))
-			return false;
-		if (ItemID == null) {
-			if (other.ItemID != null)
-				return false;
-		} else if (!ItemID.equals(other.ItemID))
-			return false;
 		if (orderID == null) {
 			if (other.orderID != null)
 				return false;
@@ -214,22 +151,13 @@ public void setItemID(Long ItemID) {
 				return false;
 		} else if (!price.equals(other.price))
 			return false;
-		if (quantity == null) {
-			if (other.quantity != null)
-				return false;
-		} else if (!quantity.equals(other.quantity))
-			return false;
-		if (saleID == null) {
-			if (other.saleID != null)
-				return false;
-		} else if (!saleID.equals(other.saleID))
-			return false;
-		return true;
+		return false;
 	}
+
+
+
+
 }
-//	public long getFkItemID() {
-//		// TODO Auto-generated method stub
-//		return ;
 //	}
 //
 //}

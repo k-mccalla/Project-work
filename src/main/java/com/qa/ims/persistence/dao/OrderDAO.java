@@ -127,6 +127,25 @@ public class OrderDAO implements Dao<Order> {
 		return read(itemID);
 	}
 	
+	public Order readAllItems(Long itemID) {
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				PreparedStatement statement = connection
+						.prepareStatement("SELECT * from order_items WHERE order_id = ?");) {
+			statement.setLong(1, itemID);
+			try (ResultSet resultSet = statement.executeQuery();) {
+				resultSet.next();
+				return modelFromResultSet1(resultSet);
+			}
+						
+		} catch (Exception e) {
+			LOGGER.debug(e);
+			LOGGER.error(e.getMessage());
+
+		}
+		return read(itemID);
+	}
+	
+	
 	
 	public Order calculateOrder(Long orderID) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -160,14 +179,14 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order update(Order orderID) {
+	public Order update(Order t) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection.prepareStatement(
 						"UPDATE orders SET item_id = ?  WHERE order_id = ?");) {
-			statement.setLong(1, orderID.getOrderID());
-			statement.setLong(1, orderID.getItemID());
+			statement.setLong(1, t.getOrderID());
+			statement.setString(2, t.getItem());
 			statement.executeUpdate();
-			return read(order.getOrderID());
+			return read(t.getOrderID());
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
