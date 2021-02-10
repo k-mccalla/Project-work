@@ -46,7 +46,7 @@ public class ItemTest {
 		assertEquals(result2, item.getItemName());
 		 
 		
-	}
+	} 
 	
 //	@Test
 //	public void testitemName() {
