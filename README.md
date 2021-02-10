@@ -91,7 +91,5 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+
 *Used the inital code in IMS Starter project as a foundation. 
