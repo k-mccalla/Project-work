@@ -19,9 +19,8 @@ MySQL Workbench- for accessing SQL databases. Can be downloaded from https://www
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+1) Open up Command Prompt this can be accessed using the windows search bar. 
+2) Go to the directory where this repository is saved. 
 
 ```
 Give the example
