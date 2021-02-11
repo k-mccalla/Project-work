@@ -32,7 +32,7 @@ public class ItemDAO implements Dao<Item> {
 	}
 
 	@Override
-	public List<Item> readAll() {
+	public List<Item> readAll() { 
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM items");) {
@@ -114,12 +114,12 @@ public class ItemDAO implements Dao<Item> {
 	public Item update(Item t) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE items SET item_name = ?, price = ? WHERE id = ?");) {
+						.prepareStatement("UPDATE items SET item_name = ?, price = ? WHERE item_id = ?");) {
 			statement.setString(1, t.getItemName());
 			statement.setDouble(2, t.getPrice());
 			statement.setLong(3, t.getItemID());
 			statement.executeUpdate();
-			return read(t.getItemID());
+			return read(t.getItemID()); 
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());

@@ -4,6 +4,7 @@ import java.util.List;
 
 
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,7 +23,7 @@ public class CustomerController implements CrudController<Customer> {
 	private CustomerDAO customerDAO; //using these classes
 	private Utils utils;
 
-	public CustomerController(CustomerDAO customerDAO, Utils utils) { //constructor(same name as class)
+	public CustomerController(CustomerDAO customerDAO, Utils utils) { 
 		super();
 		this.customerDAO = customerDAO;
 		this.utils = utils;
@@ -47,7 +48,7 @@ public class CustomerController implements CrudController<Customer> {
 	@Override
 	public Customer create() {
 		LOGGER.info("Please enter a first name");
-		String firstName = utils.getString(); //scans for input
+		String firstName = utils.getString(); 
 		LOGGER.info("Please enter a surname");
 		String surname = utils.getString();
 		Customer customer = customerDAO.create(new Customer(firstName , surname ));

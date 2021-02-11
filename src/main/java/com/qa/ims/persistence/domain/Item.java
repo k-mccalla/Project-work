@@ -10,9 +10,9 @@ public class Item {
 		super();
 		this.itemID = itemID;
 		this.price = price;
-		this.itemName = itemName;
-	}
-
+		this.itemName = itemName; 
+	}  
+  
 	
 	public Item(Double price, String itemName) {
 		super();
