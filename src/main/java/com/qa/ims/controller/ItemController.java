@@ -22,13 +22,14 @@ public class ItemController implements CrudController<Item> {
 
 	public ItemController(ItemDAO itemDAO, Utils utils) { 
 		super();
-		this.itemDAO = itemDAO;
+		this.itemDAO = itemDAO; 
 		this.utils = utils;
 	}
 //Items to logger
 	
 	@Override
 	public List<Item> readAll() {
+		LOGGER.info("All current items in inventory:");
 		List<Item> items = itemDAO.readAll();
 		for (Item item : items) {
 			LOGGER.info(item); 
@@ -42,10 +43,8 @@ public class ItemController implements CrudController<Item> {
 		LOGGER.info("Please enter item name");
 		String itemName = utils.getString();	
 		LOGGER.info("Please enter item price");
-		long price = utils.getLong();
-		LOGGER.info("Please enter a quantity for this item");
-		Long quantity = utils.getLong();
-		Item item = itemDAO.create(new Item( price , itemName, quantity)); //issue
+		Double price = utils.getDouble();
+		Item item = itemDAO.create(new Item(price, itemName)); 
 		LOGGER.info("Item listing created");
 		return item;
 		
@@ -54,24 +53,24 @@ public class ItemController implements CrudController<Item> {
 	@Override
 	public Item update() {
 		LOGGER.info("Please enter the id of the item you wish to update");
-		long itemID = utils.getLong();
+		Long itemID = utils.getLong();
 		LOGGER.info("Please enter the name of the item you wish to update");
 		String itemName = utils.getString();
 		LOGGER.info("Please enter the price of the item you wish to update");
-		long price = utils.getLong();
-		LOGGER.info("Please enter the quantity of the item you wish to update");
-		Long quantity = utils.getLong();
-		Item item = itemDAO.create(new Item(itemID, price , itemName, quantity));
+		Double price = utils.getDouble();
+		Item item = itemDAO.update(new Item(itemID, price , itemName));
 	    LOGGER.info("Item successfully updated");
 		return item;
 	}
-
+ 
 	@Override
 	public int delete() {
 		LOGGER.info("Please enter the id of the item you wish to delete");
-		long itemID = utils.getLong();
+		Long itemID = utils.getLong();
 		LOGGER.info("Item successfully deleted");
 		return itemDAO.delete(itemID);
-	}	
+	}
+
+	
 
 }

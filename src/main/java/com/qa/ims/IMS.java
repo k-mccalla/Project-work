@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.ims.controller.Action;
+
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
 import com.qa.ims.persistence.dao.CustomerDAO;
@@ -18,7 +19,6 @@ import com.qa.ims.persistence.dao.OrderDAO;
 import com.qa.ims.controller.ItemController;
 import com.qa.ims.controller.OrderController;
 
-
 public class IMS {
 
 	public static final Logger LOGGER = LogManager.getLogger();
@@ -29,6 +29,8 @@ public class IMS {
 	private ItemController items;
 	private OrderController orders;
 
+	
+
 	public IMS() {
 		this.utils = new Utils();
 		final CustomerDAO custDAO = new CustomerDAO();
@@ -38,18 +40,12 @@ public class IMS {
 		final OrderDAO orderDAO = new OrderDAO();
 		this.orders = new OrderController(orderDAO, utils);
 	}
-	
-	
-	//new
-	//public IMS() {
-	
-
 
 	public void imsSystem() {
-		LOGGER.info("Welcome to the Inventory Management System!"); 
-		DBUtils.connect(); //connecting with database
+		LOGGER.info("Welcome to the Inventory Management System!");
+		DBUtils.connect(); // connecting with database
 
-		Domain domain = null;   
+		Domain domain = null;
 		do {
 			LOGGER.info("Which entity would you like to use?");
 			Domain.printDomains();
@@ -82,10 +78,12 @@ public class IMS {
 				break;
 			}
 
-			LOGGER.info(() ->"What would you like to do with " + domain.name().toLowerCase() + ":");
+			LOGGER.info(() -> "What would you like to do with " + domain.name().toLowerCase() + ":");
 
 			Action.printActions();
 			Action action = Action.getAction(utils);
+				
+			
 
 			if (action == Action.RETURN) {
 				changeDomain = true;
@@ -114,6 +112,5 @@ public class IMS {
 		default:
 			break;
 		}
-	}
-
+		}
 }

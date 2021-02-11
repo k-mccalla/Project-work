@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
 
-public class CustomerTest {
+public class OrderTest {
 
-	Customer customer = new Customer(null, null, null);	
+	Order order = new Order(null);	
 	@BeforeClass
 	public static void setup() {
   
@@ -15,12 +15,14 @@ public class CustomerTest {
   
 	@Test
 	public void testEquals() {
-		EqualsVerifier.simple().forClass(Customer.class).verify();
+		EqualsVerifier.simple().forClass(Order.class).verify();
 	}
-
+ 
 	 
 	@Test
 	public void test2() {
-		 
+		
 	}
+	
+	
 }

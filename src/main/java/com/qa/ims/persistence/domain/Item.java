@@ -3,24 +3,21 @@ package com.qa.ims.persistence.domain;
 public class Item {
 	
 	private Long itemID;
-	private Long price;
+	private Double price;
 	private String itemName;
-	private Long quantity;
 	
-	public Item(Long itemID, Long price, String itemName, Long quantity) {
+	public Item(Long itemID, Double price, String itemName) {
 		super();
 		this.itemID = itemID;
 		this.price = price;
-		this.itemName = itemName;
-		this.quantity = quantity;
-	}
-
+		this.itemName = itemName; 
+	}  
+  
 	
-	public Item(Long price, String itemName, Long quantity) {
+	public Item(Double price, String itemName) {
 		super();
 		this.price = price;
 		this.itemName = itemName;
-		this.quantity = quantity;
 	}
 
 
@@ -32,11 +29,11 @@ public class Item {
 		this.itemID = itemID;
 	}
 
-	public Long getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Long price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -48,19 +45,14 @@ public class Item {
 		this.itemName = itemName;
 	}
 
-	public Long getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Long quantity) {
-		this.quantity = quantity;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "Item [itemID=" + itemID + ", price=" + price + ", itemName=" + itemName + ", quantity=" + quantity
-				+ "]";
+		return "Item [itemID=" + itemID + ", price=" + price + ", itemName=" + itemName + "]";
 	}
+
+
+	
 
 	@Override
 	public int hashCode() {
@@ -69,7 +61,6 @@ public class Item {
 		result = prime * result + ((itemID == null) ? 0 : itemID.hashCode());
 		result = prime * result + ((itemName == null) ? 0 : itemName.hashCode());
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
-		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
 		return result;
 	}
 
@@ -97,12 +88,8 @@ public class Item {
 				return false;
 		} else if (!price.equals(other.price))
 			return false;
-		if (quantity == null) {
-			if (other.quantity != null)
-				return false;
-		} else if (!quantity.equals(other.quantity))
-			return false;
-		return true;
+		return false;
+	
 	}
 	
 

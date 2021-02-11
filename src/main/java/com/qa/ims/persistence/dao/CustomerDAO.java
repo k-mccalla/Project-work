@@ -3,6 +3,8 @@ package com.qa.ims.persistence.dao;
 import java.sql.Connection;
 
 
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.ims.persistence.domain.Customer;
-import com.qa.ims.persistence.domain.Order;
+
 import com.qa.ims.utils.DBUtils;
 
 public class CustomerDAO implements Dao<Customer> {
@@ -29,7 +31,7 @@ public class CustomerDAO implements Dao<Customer> {
 		return new Customer(id, firstName, surname);
 	}
 
-	/**
+	/** 
 	 * Reads all customers from the database
 	 * 
 	 * @return A list of customers
@@ -142,6 +144,8 @@ public class CustomerDAO implements Dao<Customer> {
 		}
 		return 0;
 	}
+
+	
 
 
 
