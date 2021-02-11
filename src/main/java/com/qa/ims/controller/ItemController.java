@@ -22,7 +22,7 @@ public class ItemController implements CrudController<Item> {
 
 	public ItemController(ItemDAO itemDAO, Utils utils) { 
 		super();
-		this.itemDAO = itemDAO;
+		this.itemDAO = itemDAO; 
 		this.utils = utils;
 	}
 //Items to logger
@@ -58,11 +58,11 @@ public class ItemController implements CrudController<Item> {
 		String itemName = utils.getString();
 		LOGGER.info("Please enter the price of the item you wish to update");
 		Double price = utils.getDouble();
-		Item item = itemDAO.create(new Item(itemID, price , itemName));
+		Item item = itemDAO.update(new Item(itemID, price , itemName));
 	    LOGGER.info("Item successfully updated");
 		return item;
 	}
-
+ 
 	@Override
 	public int delete() {
 		LOGGER.info("Please enter the id of the item you wish to delete");

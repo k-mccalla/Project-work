@@ -25,24 +25,16 @@ public class OrderController implements CrudController<Order> {
 
 	@Override
 	public List<Order> readAll() {
-//		LOGGER.info("Do you want to read all or one order:");
-//		String input = utils.getString();
-//		if (input.equals("One")) {
-//			LOGGER.info("Enter the order id");
-//			long orderID = utils.getLong();
-//
-//			return orderDAO.readAllItems(orderID);
-//
-//		} else if (input.equals("All"))
-//			;
+		
 		LOGGER.info("All current orders in database:");
-		List<Order> orders = orderDAO.readAll();
-		for (Order order : orders) {
-			LOGGER.info(order);
+		 List<Order> orders = orderDAO.readAll();
+	for (Order order : orders) {
+		LOGGER.info(order);
 
-		}
-
-		return orders;
+		
+	}
+	return orders;
+			
 	}
 
 	@Override

@@ -13,7 +13,7 @@ public class Customer {
 
 	public Customer(Long id, String firstName, String surname) {
 		this.setId(id);
-		this.setFirstName(firstName);
+		this.setFirstName(firstName);  
 		this.setSurname(surname);
 	}
 
@@ -47,7 +47,7 @@ public class Customer {
 	}
 
 	@Override
-	public int hashCode() {  //unsure
+	public int hashCode() {  
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
