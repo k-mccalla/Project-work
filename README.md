@@ -68,7 +68,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [Eclipse](https://www.eclipse.org/downloads/)- Building the Java application
+* [Eclipse](https://www.eclipse.org/downloads/)- Building the Java application. Version 4.18.0
 * [MySQL Workbench](https://www.mysql.com/products/workbench/)- Building the SQL database with a local instance
 * [SonarCube](https://www.sonarqube.org/downloads/) - For code quality testing
 
