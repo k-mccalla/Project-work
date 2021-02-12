@@ -26,7 +26,7 @@ Type Git init (to initalise git in this folder)
 Type Git clone https://github.com/k-mccalla/Project-work.git
 This should now have cloned the repository into your folder.
 
-3) Navigate to the root folder (where git is located) using cd in command prompt. Alternativley navigate to the location of folder you just cloned and right click and select git bash here.
+3) Navigate to the root folder (where git is located) using cd in command prompt. Alternativley navigate to the location of the folder you just cloned and right click and select git bash here.
 
 For example type cd followed by the location:
 
