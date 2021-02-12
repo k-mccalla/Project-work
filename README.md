@@ -35,7 +35,7 @@ There are tests for each package.
 2)DAO
 3)Controller
 
-Each test aims to test the 
+Each test aims to test the  
 
 
 ### Integration Tests 
