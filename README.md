@@ -13,13 +13,19 @@ What things you need to install the software and how to install them
 
 ```
 Command Prompt
-
+Git bash
 ```
 
 ### Installing
 
 1) Open up Command Prompt this can be accessed using the windows search bar. 
 2) Clone this repository into an empty folder using git bash.
+3) Navigate to the folder using cd in command prompt. 
+
+For example type cd followed by the location:
+
+cd c:\Users\....
+
 3) Run the Java File in command prompt. 
 
 
@@ -35,7 +41,7 @@ There are tests for each package.
 2)DAO
 3)Controller
 
-Each test aims to test the  
+Each test aims to test the individual properties of each package. These include testing to see if the methods in the test equal a certain value. 
 
 
 ### Integration Tests 
