@@ -21,7 +21,8 @@ Eclipse- download https://www.eclipse.org/downloads/
 ### Installing
 
 1) Open up Command Prompt this can be accessed using the windows search bar. Alternativley, You can press Win + R, then type cmd.exe into the Run field.
-2) Clone this repository into an empty folder using git bash.
+2) Clone this repository into an empty folder using git bash. 
+Type Git clone 
 3) Navigate to the folder using cd in command prompt. 
 
 For example type cd followed by the location:
@@ -29,6 +30,7 @@ For example type cd followed by the location:
 cd c:\Users\....
 
 4) Use the command dir to see all the directory.
+Navigate to the root folder (where git is located)
 5) Run the Java File in command prompt. 
 For example:
 $ java -jar ims-0.0.1-jar-with-dependencies.jar
