@@ -27,7 +27,8 @@ For example type cd followed by the location:
 
 cd c:\Users\....
 
-3) Run the Java File in command prompt. 
+4) Use the command dir to see all the directory.
+5) Run the Java File in command prompt. 
 
 
 ## Running the tests
