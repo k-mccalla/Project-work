@@ -13,7 +13,7 @@ What things you need to install the software and how to install them
 
 ```
 Command Prompt- accessible from Windows Search Bar
-Git Bash 
+Git Bash - download https://gitforwindows.org/
 MySQL Workbench (for a local instance of the SQL database) - download https://www.mysql.com/products/workbench/
 Eclipse- download https://www.eclipse.org/downloads/
 ```
@@ -30,7 +30,9 @@ cd c:\Users\....
 
 4) Use the command dir to see all the directory.
 5) Run the Java File in command prompt. 
-6) To run the Java file 
+For example:
+$ java -jar ims-0.0.1-jar-with-dependencies.jar
+
 
 
 ## Running the tests
