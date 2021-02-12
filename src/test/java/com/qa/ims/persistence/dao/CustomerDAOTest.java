@@ -65,11 +65,12 @@ public class CustomerDAOTest {
 	public void finalise() {
 		System.out.println("After test");
 	}
+	@AfterClass
+	public static void teardown() {
+		System.out.println("After class");
+
+	}
+
 }
-//	@AfterClass
-//	public static void teardown() {
-//		System.out.println("After class");
-//
-//	}
-//
-//}
+
+
