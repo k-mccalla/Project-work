@@ -13,7 +13,7 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 
 public class ItemTest {
 	
-	private Item item = new Item(null, null);	 
+		private Item item = new Item(null, null);	 
 
 	@BeforeClass
 	public static void setup() {
@@ -22,13 +22,10 @@ public class ItemTest {
 	
 
 	@Test
-	public void testEquals() {
+	public void testEquals() { 
 		EqualsVerifier.simple().forClass(Item.class).verify();
-		//assertEquals(1, item.getItemID());
-		//Item a = new Item(1);
-		
-//		assertEquals(1, 0);
-//		assertEquals(null, 0, 0);
+		assertEquals(1, 0);
+		assertEquals(null, 0, 0);
 	}
   
 	@Test
@@ -39,7 +36,7 @@ public class ItemTest {
 		
 		Item i = new Item(value, value1, value2); 
 		Long result = i.getItemID(); 
-		Double result1 = i.getPrice();
+		Double result1 = i.getPrice(); 
 		String result2 = i.getItemName();
 		assertEquals(result, item.getItemID());  
 		assertEquals(result1, item.getPrice());
@@ -48,16 +45,29 @@ public class ItemTest {
 		
 	} 
 	
-//	@Test
-//	public void testitemName() {
-//	    try {
-//	      new Item(null, "a");
-//	      new itemName("b");
-//	      new itemName("c");
-//	    } catch (Exception e) {
-//	      fail(e.getMessage());
-//	    }
-//	}
+	@Test
+	public void testitemName() {
+	    try {
+	      new Item(null, "a");
+	      new Item(null, "b");
+	      new Item(null, "c");
+	    } catch (Exception e) {
+	      fail(e.getMessage()); 
+	      
+	    } 
+	}
+	    
+	    @Test
+	    public void testItems() {
+	    	assertEquals(50, item.getPrice(), 1);
+	    	assertEquals(5, item.getItemID(), 1);
+	    	//assertEquals
+	    	
+	    
+		
+		}
+		
+	
 	
 	@After
 	public void finalise() {
