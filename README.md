@@ -14,6 +14,7 @@ What things you need to install the software and how to install them
 ```
 Command Prompt
 Git bash
+MySQL Workbench (for a local instance of the SQL database) - download https://www.mysql.com/products/workbench/
 ```
 
 ### Installing
