@@ -22,5 +22,13 @@ public class CustomerTest {
 	@Test
 	public void test2() {
 		 
+		
+	}
+	
+	
+
+	@After
+	public void finalise() {
+		System.out.println("After test");
 	}
 }
