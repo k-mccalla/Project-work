@@ -13,57 +13,42 @@ What things you need to install the software and how to install them
 
 ```
 Command Prompt
-MySQL Workbench- for accessing SQL databases. Can be downloaded from https://www.mysql.com/products/workbench/ 
 
 ```
 
 ### Installing
 
 1) Open up Command Prompt this can be accessed using the windows search bar. 
-2) Go to the directory where this repository is saved. 
+2) Clone this repository into an empty folder using git bash.
+3) Run the Java File in command prompt. 
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
 
 ### Unit Tests 
 
 This application uses JUnit testing. 
 
-```
-Give an example
-```
+There are tests for each package.
+1)Domain
+2)DAO
+3)Controller
+
+Each test aims to test the 
+
 
 ### Integration Tests 
-Explain what these tests test, why and how to run them
 
-```
-Give an example
 ```
 
 ### And coding style tests
 
-Explain what these tests test and why
 
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+
 
 ## Built With
 
