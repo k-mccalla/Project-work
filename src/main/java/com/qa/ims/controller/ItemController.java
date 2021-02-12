@@ -17,7 +17,7 @@ public class ItemController implements CrudController<Item> {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private ItemDAO itemDAO; // using these classes
+	private ItemDAO itemDAO;
 	private Utils utils;
 
 	public ItemController(ItemDAO itemDAO, Utils utils) { 
@@ -52,7 +52,7 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public Item update() {
-		LOGGER.info("Please enter the id of the item you wish to update");
+		LOGGER.info("Please enter the ID of the item you wish to update");
 		Long itemID = utils.getLong();
 		LOGGER.info("Please enter the name of the item you wish to update");
 		String itemName = utils.getString();
@@ -65,7 +65,7 @@ public class ItemController implements CrudController<Item> {
  
 	@Override
 	public int delete() {
-		LOGGER.info("Please enter the id of the item you wish to delete");
+		LOGGER.info("Please enter the ID of the item you wish to delete");
 		Long itemID = utils.getLong();
 		LOGGER.info("Item successfully deleted");
 		return itemDAO.delete(itemID);
