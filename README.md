@@ -12,14 +12,15 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Command Prompt
-Git bash
+Command Prompt- accessible from Windows Search Bar
+Git Bash 
 MySQL Workbench (for a local instance of the SQL database) - download https://www.mysql.com/products/workbench/
+Eclipse- download https://www.eclipse.org/downloads/
 ```
 
 ### Installing
 
-1) Open up Command Prompt this can be accessed using the windows search bar. 
+1) Open up Command Prompt this can be accessed using the windows search bar. Alternativley, You can press Win + R, then type cmd.exe into the Run field.
 2) Clone this repository into an empty folder using git bash.
 3) Navigate to the folder using cd in command prompt. 
 
@@ -29,6 +30,7 @@ cd c:\Users\....
 
 4) Use the command dir to see all the directory.
 5) Run the Java File in command prompt. 
+6) To run the Java file 
 
 
 ## Running the tests
@@ -43,19 +45,15 @@ There are tests for each package.
 2)DAO
 3)Controller
 
+Run Eclipse.
 Each test aims to test the individual properties of each package. These include testing to see if the methods in the test equal a certain value. 
+
+Navigate to the testing folder (src/test/java). Right click and select coverage as and select 2.JUnitTesting.
+It should open a new window in eclipse that shows testing and coverage. 
 
 
 ### Integration Tests 
 
-```
-
-### And coding style tests
-
-
-
-## Deployment
-```
 
 
 ## Built With
