@@ -147,20 +147,20 @@ public class OrderDAO implements Dao<Order> {
 		
 		
 
-//	public Order calculateOrder(Long orderID) {
-//		try (Connection connection = DBUtils.getInstance().getConnection();
-//				PreparedStatement statement = connection
-//						.prepareStatement("SELECT sum(price) from orders where order_id = ?");) {
-//			statement.setLong(1, orderID);
-//			// statement.setLong(2, itemID);
-//			statement.executeUpdate();
-//
-//		} catch (Exception e) {
-//			LOGGER.debug(e);
-//			LOGGER.error(e.getMessage());
-//
-//		}
-//		return read(orderID);
+	public Order calculateOrder(Long orderID) {
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				PreparedStatement statement = connection
+						.prepareStatement("SELECT sum(price) from orders where order_id = ?");) {
+			statement.setLong(1, orderID);
+			// statement.setLong(2, itemID);
+			statement.executeUpdate();
+
+		} catch (Exception e) {
+			LOGGER.debug(e);
+			LOGGER.error(e.getMessage());
+
+		}
+		return read(orderID);
 	
 
 	public Order readLatest() {
